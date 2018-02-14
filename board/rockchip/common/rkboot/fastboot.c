@@ -149,6 +149,8 @@ int board_fbt_key_pressed(void)
 
 #ifdef CONFIG_RK_KEY
 	checkKey((uint32 *)&boot_rockusb, (uint32 *)&boot_recovery, (uint32 *)&boot_fastboot);
+#else
+	udelay(1000000); /* 1 sec */
 #endif
 
 #if defined(CONFIG_RK_PWM_REMOTE)
